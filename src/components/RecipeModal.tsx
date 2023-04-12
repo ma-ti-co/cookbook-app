@@ -1,40 +1,34 @@
 import { Button, Modal, Box, Typography, Card} from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import RecipeForm from './RecipeForm'
+import { Recipe, RecipeFormProps } from '../../lib/schema';
 
+
+interface ModalProps{
+  recipes: any[],
+  fetchRecipes: () => void,
+  setRecipes: React.Dispatch<React.SetStateAction<Recipe[]>>;
+}
 
 const cardStyle = {
     position:'absolute',
-    top:'20%',
+    top:'50%',
     left:'50%',
     transform:'translate(-50%, -50%)',
-    background:'white',
-    padding:'3rem'
-}
-
-interface RecipeProps {
-  id:number;
-  title: string;
-  description: string;
-  image: string;
-  difficulty:number;
-  duration:number;
-  ingredients:string[];
+    background:'#121212',
+    padding:'3rem',
+    boxShadow:'0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)'
 }
 
 
-interface RecipeFormProps {
-  recipes:string[];
-  setRecipes: () => void
-}
+const RecipeModal = ({setRecipes, recipes, fetchRecipes}:ModalProps) => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-const RecipeModal:React.FC<RecipeFormProps> = ({recipes, setRecipes}) => {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
   return (
     <>
-      <Button onClick={handleOpen} variant="outlined">Open modal</Button>
+      <Button onClick={handleOpen} variant="outlined">Add Recipe</Button>
         <Modal
             open={open}
             onClose={handleClose}
@@ -42,14 +36,13 @@ const RecipeModal:React.FC<RecipeFormProps> = ({recipes, setRecipes}) => {
             aria-describedby="modal-modal-description"
         >
         <Box>
-        {JSON.stringify(recipes)}
             <Card sx={cardStyle}>
             <Typography sx={{
               mb:3
             }} id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+            Add a Recipe
             </Typography>
-            <RecipeForm recipes={recipes} setRecipes={setRecipes}/>
+            <RecipeForm recipes={recipes} setRecipes={setRecipes} fetchRecipes={fetchRecipes} setOpen={setOpen}/>
             </Card>
         </Box>
         </Modal>

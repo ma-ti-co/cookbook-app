@@ -1,6 +1,7 @@
 {
     "recipes": [
       {
+        "id":0,
         "title": "Spaghetti Carbonara",
         "description": "A classic Italian dish made with spaghetti, eggs, bacon, and cheese.",
         "duration":45,
@@ -16,11 +17,12 @@
         ]
       },
       {
+        "id":1,
         "title": "Chicken Fajitas",
         "description": "A Tex-Mex favorite made with grilled chicken, peppers, and onions.",
         "duration":45,
         "difficulty":2,
-        "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/4004_-_Zermatt_-_Restaurant_Weisshorn.JPG/2560px-4004_-_Zermatt_-_Restaurant_Weisshorn.JPG",
+        "image":"https://images.themodernproper.com/billowy-turkey/production/posts/2019/Chicken-Fajitas-7.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1599767214&s=62c89479b3ce75ab9830cbabc9002e30",
         "ingredients": [
           "1 lb boneless, skinless chicken breasts, sliced",
           "1 red bell pepper, sliced",
@@ -33,6 +35,7 @@
         ]
       },
       {
+        "id":2,
         "title": "Vegetable Stir-Fry",
         "description": "A healthy and colorful dish made with a variety of vegetables and a soy sauce-based sauce.",
         "duration":45,
@@ -52,6 +55,7 @@
         ]
       },
       {
+        "id":3,
         "title": "Beef Stroganoff",
         "description": "A hearty and comforting dish made with beef, mushrooms, and a sour cream-based sauce.",
         "duration":45,
@@ -69,6 +73,7 @@
         ]
       },
       {
+        "id":4,
         "title": "Fish Tacos",
         "description": "A light and fresh meal made with grilled fish, cabbage slaw, and a spicy crema sauce.",
         "duration":45,
